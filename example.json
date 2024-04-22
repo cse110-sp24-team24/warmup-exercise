@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "title": "Grocery shopping",
+      "day": "Monday",
+      "completed": false
+    },
+    {
+      "title": "Meeting with client",
+      "day": "Tuesday",
+      "completed": true
+    },
+    {
+      "title": "Gym session",
+      "day": "Wednesday",
+      "completed": false
+    },
+    {
+      "title": "Submit report",
+      "day": "Thursday",
+      "completed": false
+    },
+    {
+      "title": "Dentist appointment",
+      "day": "Friday",
+      "completed": true
+    }
+  ]
+}
