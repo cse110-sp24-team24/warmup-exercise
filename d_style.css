@@ -1,0 +1,9 @@
+li.todo:hover {
+    text-decoration: line-through;
+}
+
+
+li.done {
+    text-decoration: line-through;
+    color:gray;
+}
