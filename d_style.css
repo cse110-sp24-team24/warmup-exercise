@@ -1,3 +1,7 @@
+.items li {
+    cursor: pointer;
+}
+
 li.todo:hover {
     text-decoration: line-through;
 }
@@ -6,4 +10,20 @@ li.todo:hover {
 li.done {
     text-decoration: line-through;
     color:gray;
+}
+
+button {
+    background-color: rgba(255, 215, 0, 0.5);
+    border: 5px outset rgba(218, 165, 32, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 215, 0, 0.75);
+        border: 5px outset rgba(218, 165, 32, 0.75);
+    }
+
+    &:active {
+        background-color: rgba(255, 215, 0, 1);
+        border: 5px outset rgba(218, 165, 32, 1);
+    }
 }

@@ -8,6 +8,11 @@
 //     }
 // }
 function changeClass(element) {
+    var checkbox = element.querySelector("input[type='checkbox'");
+    if(!checkbox.checked)
+    {
+        checkbox.checked = !checkbox.checked;
+    }
     if (element.classList.contains('todo')) {
         element.classList.remove('todo');
         element.classList.add('done');
@@ -25,9 +30,11 @@ function changeClass(element) {
 // done means task is done (styling is done in css to represent done vs not done)
 
 
-
-// TODO
-
-
-
 // add a button that removes all "done" class list items from the list
+function removeDone()
+{
+    var completed = document.querySelectorAll('.done');
+    completed.forEach(done => {
+        done.remove();
+    });
+}

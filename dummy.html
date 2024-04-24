@@ -12,10 +12,12 @@
     <script src="s.js"></script>
     <h2>Attendees:</h2>
         <ul class="items">
-            <li class="todo" onclick="changeClass(this)">Draymond Green</li>
-            <li class="todo" onclick="changeClass(this)">Ishaan Kale</li>
-            <li class="todo" onclick="changeClass(this)">Joe Biden</li>
-            <li class="todo" onclick="changeClass(this)">Lebron James</li>
+            <li class="todo" onclick="changeClass(this)"> <input type="checkbox"> Draymond Green</li>
+            <li class="todo" onclick="changeClass(this)"> <input type="checkbox"> Ishaan Kale</li>
+            <li class="todo" onclick="changeClass(this)"> <input type="checkbox"> Joe Biden</li>
+            <li class="todo" onclick="changeClass(this)"> <input type="checkbox"> Lebron James</li>
         </ul>
+
+    <button id="remove-done" onclick="removeDone()">Remove Completed Tasks</button>
   </body>
 </html>
