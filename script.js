@@ -1,47 +1,86 @@
-const allItems = []; // list of all todo items
-const completed = []; // list of all items that are currently marked as completed
-const uncompleted = []; // list of all items that still need to be completed
+allTasks = []; // list of all todo items
+completed = []; // list of all items that are currently marked as completed
+uncompleted = []; // list of all items that still need to be completed
 
-fetchJSON(`./example.json`);
+loadJSON(`./example.json`); // We should only allow tasks to be added when the loadJSON is finished
 
-function fetchJSON(filename) {
-  fetch(filename)
+//Setup
+async function loadJSON(filename) {
+  return fetch(filename)
     .then((response) => {
       if (!response.ok) {
-        console.error("JSON file not found");
+        new Error("JSON file not found");
       }
       return response.json();
     })
     .then((data) => {
-      data.tasks.forEach((task) => {
-        const item = [task.title, task.day];
-        allItems.push(item);
-        if (task.completed) {
-          completed.push(item);
-        } else {
-          uncompleted.push(item);
-        }
-      });
+      if (!data.tasks) {
+        new Error("incorrect JSON format");
+      }
+      allTasks = data.tasks;
+      updateTasks();
     });
 }
 
-function createTodo() {
-  console.log(uncompleted);
+//This needs a better name
+function updateTasks() {
+  completed = [];
+  uncompleted = [];
+  allTasks.forEach((task) => {
+    if (task.completed) {
+      completed.push(task);
+    } else {
+      uncompleted.push(task);
+    }
+  });
+  console.log("all:", allTasks);
+  console.log("complete:", completed);
+  console.log("uncomplete:", uncompleted);
+  console.log(" ");
+}
+
+//Task Manipulation
+function addTask(title, day, completed) {
+  newTask = {
+    id: Date.now(), // ideally we would have a guaranteed random but idc
+    title: title,
+    day: day,
+    completed: completed,
+  };
+  allTasks.push(newTask);
+  updateTasks();
+}
+
+function completeTask(id) {
+  allTasks = allTasks.map((task) =>
+    task.id == id ? { ...task, completed: true } : task
+  );
+  updateTasks();
+}
+
+function uncompleteTask(id) {
+  allTasks = allTasks.map((task) =>
+    task.id == id ? { ...task, completed: false } : task
+  );
+  updateTasks();
+}
+
+//Add Task Form
+const addTaskForm = document.querySelector("#addTaskForm");
+addTaskForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  submitAddTaskForm();
+});
+
+function submitAddTaskForm() {
   if (
-    document.getElementById("todoInput").value == "" ||
-    document.getElementById("dayInput").value == ""
+    document.getElementById("titleInput").value == ""
   ) {
     return false;
   }
-
-  const item = [
-    document.getElementById("todoInput").value,
-    document.getElementById("dayInput").value,
-  ];
-  allItems.push(item);
-  uncompleted.push(item);
-  document.getElementById("todoInput").value = "";
-  document.getElementById("dayInput").value = "";
-  console.log(allItems); // can check that item is being added through Javascript console
+  taskTitle = document.getElementById("titleInput").value;
+  taskDay = document.getElementById("dayInput").value;
+  addTask(taskTitle, taskDay, false);
+  document.getElementById("titleInput").value = "";
   return false;
 }

@@ -1,26 +1,31 @@
 {
   "tasks": [
     {
+      "id": 1,
       "title": "Grocery shopping",
       "day": "Monday",
       "completed": false
     },
     {
+      "id": 2,
       "title": "Meeting with client",
       "day": "Tuesday",
       "completed": true
     },
     {
+      "id": 3,
       "title": "Gym session",
       "day": "Wednesday",
       "completed": false
     },
     {
+      "id": 4,
       "title": "Submit report",
       "day": "Thursday",
       "completed": false
     },
     {
+      "id": 5,
       "title": "Dentist appointment",
       "day": "Friday",
       "completed": true
