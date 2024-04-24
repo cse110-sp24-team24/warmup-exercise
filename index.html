@@ -22,7 +22,7 @@
   <body>
     <h2>Task List</h2>
     <!-- Dropdowns for each day -->
-    <select id="dayDropdown">
+    <!-- <select id="dayDropdown">
       <option value="monday">Monday</option>
       <option value="tuesday">Tuesday</option>
       <option value="wednesday">Wednesday</option>
@@ -30,14 +30,43 @@
       <option value="friday">Friday</option>
       <option value="saturday">Saturday</option>
       <option value="sunday">Sunday</option>
-    </select>
+    </select> -->
+    
+    <details id="dayDropdown">
+      <summary>Monday</summary>
+      <ul id="mondayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Tuesday</summary>
+      <ul id="tuesdayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Wednesday</summary>
+      <ul id="wednesdayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Thursday</summary>
+      <ul id="thursdayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Friday</summary>
+      <ul id="fridayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Saturday</summary>
+      <ul id="saturdayTasks" class="dayTasks"></ul>
+    </details>
+    <details>
+      <summary>Sunday</summary>
+      <ul id="sundayTasks" class="dayTasks"></ul>
+    </details>
     <!-- Container for tasks -->
-    <div id="taskContainer">
+    <!-- <div id="taskContainer">
       <h3>Tasks for Today</h3>
-      <ul id="taskList">
+      <ul id="taskList"> -->
         <!-- Tasks will be rendered here -->
-      </ul>
-    </div>
+      <!-- </ul>
+    </div> -->
 
     <script src="script.js"></script>
   </body>
