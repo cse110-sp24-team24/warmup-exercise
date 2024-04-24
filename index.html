@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <h2>Task List</h2>
+    
     <!-- Dropdowns for each day -->
     <!-- <select id="dayDropdown">
       <option value="monday">Monday</option>
@@ -31,42 +31,44 @@
       <option value="saturday">Saturday</option>
       <option value="sunday">Sunday</option>
     </select> -->
-    
-    <details id="dayDropdown">
+    <!-- Container for tasks -->
+    <!-- <div id="taskContainer">
+          <h3>Tasks for Today</h3>
+          <ul id="taskList"> -->
+    <!-- Tasks will be rendered here -->
+    <!-- </ul>
+        </div> -->
+
+    <h2>Task List</h2>
+
+    <details id="mondayDropdown" class="dayDropdown">
       <summary>Monday</summary>
       <ul id="mondayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="tuesdayDropdown" class="dayDropdown">
       <summary>Tuesday</summary>
       <ul id="tuesdayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="wednesdayDropdown" class="dayDropdown">
       <summary>Wednesday</summary>
       <ul id="wednesdayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="thursdayDropdown" class="dayDropdown">
       <summary>Thursday</summary>
       <ul id="thursdayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="fridayDropdown" class="dayDropdown">
       <summary>Friday</summary>
       <ul id="fridayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="saturdayDropdown" class="dayDropdown">
       <summary>Saturday</summary>
       <ul id="saturdayTasks" class="dayTasks"></ul>
     </details>
-    <details>
+    <details id="sundayDropdown" class="dayDropdown">
       <summary>Sunday</summary>
       <ul id="sundayTasks" class="dayTasks"></ul>
     </details>
-    <!-- Container for tasks -->
-    <!-- <div id="taskContainer">
-      <h3>Tasks for Today</h3>
-      <ul id="taskList"> -->
-        <!-- Tasks will be rendered here -->
-      <!-- </ul>
-    </div> -->
 
     <script src="script.js"></script>
   </body>

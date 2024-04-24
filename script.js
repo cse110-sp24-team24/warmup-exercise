@@ -42,11 +42,8 @@ const uncompleted = [
             { id: 18, day: 'sunday', task: 'Plan for the week' }
         ]; // list of all items that still need to be completed
 
-// Function to render tasks for selected day
-function renderTasks(day) {
-    const taskList = document.getElementById('taskList');
-    taskList.innerHTML = ''; // Clear existing tasks
-
+// Function to add tasks to the list for a specific day
+function addTasksForDay(day, taskList) {
     // Filter tasks for the selected day
     const uncompletedTasks = uncompleted.filter(task => task.day === day);
     const completedTasks = completed.filter(task => task.day === day);
@@ -68,11 +65,19 @@ function renderTasks(day) {
     });
 }
 
-// Event listener for day dropdown change
-document.getElementById('dayDropdown').addEventListener('change', function() {
-    const selectedDay = this.value;
-    renderTasks(selectedDay);
-});
+// Function to render tasks for selected day
+function renderTasks(day) {
+    const taskList = document.getElementById(`${day}Tasks`);
+    taskList.innerHTML = ''; // Clear existing tasks
+    addTasksForDay(day, taskList);
+}
 
-// Initial render for default selected day
-renderTasks('monday');
+// Event listener for day dropdown change
+document.querySelectorAll('.dayDropdown').forEach(dropdown => {
+    dropdown.addEventListener('toggle', function () {
+        if (this.open) {
+            const selectedDay = this.id.replace('Dropdown', '');
+            renderTasks(selectedDay);
+        }
+    });
+});
