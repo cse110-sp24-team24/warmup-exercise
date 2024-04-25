@@ -11,7 +11,7 @@
       .task {
         margin-bottom: 5px;
       }
-    
+
       /* Styling for checked tasks */
       /* alr handled in css file so will comment this out -ishaan */
       /* .checked {
@@ -21,7 +21,6 @@
   </head>
 
   <body>
-    
     <!-- Dropdowns for each day -->
     <!-- <select id="dayDropdown">
       <option value="monday">Monday</option>
@@ -41,6 +40,25 @@
         </div> -->
 
     <h2>Task List</h2>
+
+    <form id="addTaskForm">
+      <label>Enter todo: </label>
+      <div>
+        <input type="text" placeholder="Task title" , id="titleInput" />
+        <select name="day" id="dayInput">
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
+        <button type="submit">Add todo</button>
+      </div>
+    </form>
+
+    <br />
 
     <details id="mondayDropdown" class="dayDropdown">
       <summary>Monday</summary>
@@ -71,9 +89,9 @@
       <ul id="sundayTasks" class="dayTasks"></ul>
     </details>
 
-
-    <button id="remove-done" onclick="removeDone()">Remove Completed Tasks</button>
-
+    <button id="remove-done" onclick="removeDone()">
+      Remove Completed Tasks
+    </button>
     <script src="script.js"></script>
   </body>
 </html>
