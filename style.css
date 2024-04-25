@@ -25,7 +25,6 @@ form#addTaskForm {
     background: #edbcdc;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
 }
 
@@ -50,15 +49,18 @@ form#addTaskForm div {
     border-radius: 6px;
     color: white;
     background-color: #c171da;
+    font-size: 20px;
 }
 
 #dayInput:hover {
     background-color: #c60f83;
+    cursor: pointer;
+
 }
 
 input[type="text"], select {
     padding: 16px;
-    font-size: 18px;
+    font-size: 20px;
     border: 2px solid #ccc;
     border-radius: 6px;
     outline: none;
@@ -81,7 +83,7 @@ button {
     padding: 20px 20px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 button:hover {
@@ -96,18 +98,24 @@ details.dayDropdown {
     border-radius: 8px;
     margin-top: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 details.dayDropdown:hover {
     background-color: #c60f83;
 }
 
+/* day named lists*/
 summary {
     font-size: 22px;
     font-weight: bold;
     color: #283593;
     cursor: pointer;
     position: relative;
+}
+
+summary:hover{
+    color: white;
 }
 
 summary::after {
