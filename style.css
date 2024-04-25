@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #333539;
+    color: #283593;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #c171da;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+/* form styling */
+form#addTaskForm {
+    background: #edbcdc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+form#addTaskForm label {
+    font-size: 25px;
+    color: #283593;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form#addTaskForm div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#dayInput {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 6px;
+    color: white;
+    background-color: #c171da;
+}
+
+#dayInput:hover {
+    background-color: #c60f83;
+}
+
+input[type="text"], select {
+    padding: 16px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    appearance: none;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #8e24aa;
+}
+
+select {
+    background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23434343%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') no-repeat right 10px center / 12px 7px;
+    -webkit-appearance: none; 
+}
+
+button {
+    background-color: #c171da;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #c60f83;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* dropdown */
+details.dayDropdown {
+    background: #edbcdc;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+details.dayDropdown:hover {
+    background-color: #c60f83;
+}
+
+summary {
+    font-size: 22px;
+    font-weight: bold;
+    color: #283593;
+    cursor: pointer;
+    position: relative;
+}
+
+summary::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 12px;
+    height: 7px;
+    background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23ffffff%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') no-repeat center;
+    transform: translateY(-50%);
+}
+
+ul.dayTasks {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+ul.dayTasks li {
+    padding: 10px;
+    background: #f1f8e9;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+ul.dayTasks li:hover {
+    background: #dcedc8;
+}
+
+.task.checked {
+    text-decoration: line-through;
+    color: #9e9e9e;
+}
+
+/* animations*/
+input[type="text"], select, button {
+    transition: all 0.2s ease-in-out;
+}
