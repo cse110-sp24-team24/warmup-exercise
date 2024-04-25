@@ -13,9 +13,10 @@
       }
     
       /* Styling for checked tasks */
-      .checked {
+      /* alr handled in css file so will comment this out -ishaan */
+      /* .checked {
         color: #999;
-      }
+      } */
     </style>
   </head>
 
@@ -69,6 +70,9 @@
       <summary>Sunday</summary>
       <ul id="sundayTasks" class="dayTasks"></ul>
     </details>
+
+
+    <button id="remove-done" onclick="removeDone()">Remove Completed Tasks</button>
 
     <script src="script.js"></script>
   </body>
