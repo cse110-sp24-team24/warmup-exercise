@@ -13,6 +13,7 @@ function changeClass(element) {
     {
         checkbox.checked = !checkbox.checked;
     }
+
     if (element.classList.contains('todo')) {
         element.classList.remove('todo');
         element.classList.add('done');
