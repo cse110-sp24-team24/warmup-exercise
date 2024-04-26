@@ -15,9 +15,17 @@ Team Name: Computer Pawgrammers
 ### Strengths
 
 - We were able to focus on creating an intuitive, appealing user interface, following the philosophy of putting the user experience first.
+- The simplicity of the app further adds to a smooth user experience and ensures good performance (since not a lot of extra code needs to be processed). Users can come to the app for the exact purpose of having a todo list and use it easily.
 
 ### Weaknesses
 
+- The way we split up the tasks for the project led to some blockers between tasks, meaning not everyone could work on their task at the same time. In the future, we would like to be more mindful of how tasks are split.
+- Since the project is completely rendered client-side, the program is open to security risks and attacks.
+
 ### Opportunities
 
+- We may be able to connect the app to a database such as MongoDB to store user information and tasks, allowing for persistant storage so users can access their todo lists anywhere, anytime.
+
 ### Threats
+
+- Competing todo list apps may have added features (for example, connecting to Google Calendar) that may make them more appealing.
