@@ -24,8 +24,21 @@ Creating a Task List (or To-do list) widget which allows users to add weekly tas
 
 ## Developer Stories:
 
-* 
+* As a developer, I need to design a responsive user interface for the task list widget so that it is accessible on any device.
+  * Acceptance Criteria:
+    * Create mockups for mobile, tablet, and desktop views.
+    * Test on multiple devices and screen sizes to ensure compatibility.
 
+* As a developer, I need to ensure the application is accessible to all users, including those with disabilities.
+  * Acceptance Criteria:
+    * Follow Web Content Accessibility Guidelines (WCAG) during development.
+    * Test accessibility features with tools like screen readers and accessibility testing software.
+
+* As a developer, I need to perform comprehensive testing to ensure the application is robust and error-free.
+  * Acceptance Criteria:
+    * Write unit tests for all functional components and integration tests for end-to-end testing.
+    * Use automated testing tools to simulate user interactions.
+    * Perform stress testing to ensure the application handles a high volume of tasks efficiently.
 
 ## Requirements:
 * The widget must read in data from hardcoded JSON files.
