@@ -3,28 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Caveat+Brush&family=Caveat:wght@400..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-con" href="css-image/notepad.png" />
     <link rel="icon" type="image/x-con" href="Logo24.jpeg" />
-    <title>Todo List</title>
+    <title>To-do List</title>
   </head>
 
   <body>
-    <form id="addTaskForm">
-      <label>Enter todo: </label>
-      <div>
-        <input type="text" placeholder="Task title" , id="titleInput" />
-        <select name="day" id="dayInput">
-          <option value="Sunday">Sunday</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-        </select>
-        <button type="submit">Add todo</button>
+    <div class="background-color">
+      <div class="Task-List">
+        <h2>Task List<img src="css-image/notepad.png" alt="note" /></h2>
+        <hr />
+        <br />
+
+        <form id="addTaskForm">
+          <div>
+            <input type="text" placeholder="Enter a task" , id="titleInput" />
+            <select name="day" id="dayInput">
+              <option value="Sunday">Sunday</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+            </select>
+            <button id="add-button" type="submit">Add todo</button>
+          </div>
+        </form>
+
+        <br />
+
+        <details id="mondayDropdown" class="dayDropdown">
+          <summary>Monday</summary>
+          <ul id="mondayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="tuesdayDropdown" class="dayDropdown">
+          <summary>Tuesday</summary>
+          <ul id="tuesdayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="wednesdayDropdown" class="dayDropdown">
+          <summary>Wednesday</summary>
+          <ul id="wednesdayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="thursdayDropdown" class="dayDropdown">
+          <summary>Thursday</summary>
+          <ul id="thursdayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="fridayDropdown" class="dayDropdown">
+          <summary>Friday</summary>
+          <ul id="fridayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="saturdayDropdown" class="dayDropdown">
+          <summary>Saturday</summary>
+          <ul id="saturdayTasks" class="dayTasks"></ul>
+        </details>
+        <details id="sundayDropdown" class="dayDropdown">
+          <summary>Sunday</summary>
+          <ul id="sundayTasks" class="dayTasks"></ul>
+        </details>
+
+        <button id="remove-done" onclick="removeDone()">
+          Remove Completed Tasks
+        </button>
       </div>
-    </form>
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>
