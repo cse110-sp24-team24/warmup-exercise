@@ -1,8 +1,9 @@
 // list of all todo items
 
-allTasks = []; // list of all todo items
-completed = []; // list of all items that are currently marked as completed
-uncompleted = []; // list of all items that still need to be completed
+var allTasks = []; // list of all todo items
+var completed = []; // list of all items that are currently marked as completed
+var uncompleted = []; // list of all items that still need to be completed
+var curr_id = 0;
 
 loadJSON(`./example.json`); // We should only allow tasks to be added when the loadJSON is finished
 
@@ -57,11 +58,12 @@ function updateTasks() {
 //Task Manipulation
 function addTask(title, day, completed) {
   newTask = {
-    id: Date.now(), // ideally we would have a guaranteed random but idc
+    id: curr_id, // ideally we would have a guaranteed random but idc
     title: title,
     day: day.toLowerCase(),
     completed: completed,
   };
+  curr_id++;
   allTasks.push(newTask);
   updateTasks();
 }
@@ -105,21 +107,19 @@ function changeClass(element) {
     element.classList.add("done");
 
     //change item from uncompleted to completed
-    item = uncompleted.find((i) => i.id === parseInt(element.id));
-    uncompleted = uncompleted.filter((check) => check !== item);
-    completed.push(item);
-
+    
+    completeTask(parseInt(element.id));
+    updateTasks();
     // Move the completed item to the bottom of the list
     const parent = element.parentNode;
     parent.appendChild(element);
   } else {
-    element.classList.remove("done");
-    element.classList.add("todo");
+      element.classList.remove("done");
+      element.classList.add("todo");
 
-    //change item from completed to uncompleted
-    item = completed.find((i) => i.id === parseInt(element.id));
-    completed = completed.filter((check) => check !== item);
-    uncompleted.push(item);
+      //change item from completed to uncompleted
+      uncompleteTask(parseInt(element.id));
+      updateTasks();
   }
 }
 
@@ -127,8 +127,9 @@ function changeClass(element) {
 function removeDone() {
   var comp = document.querySelectorAll(".done");
   comp.forEach((done) => {
-    item = completed.find((i) => i.id === parseInt(done.id));
-    completed = completed.filter((check) => check !== item);
+    item = allTasks.find((i) => i.id === parseInt(done.id));
+    allTasks = allTasks.filter((check) => check !== item);
+    updateTasks();
     done.remove();
   });
 }

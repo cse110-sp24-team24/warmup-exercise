@@ -3,7 +3,7 @@
 }
 
 li.todo:hover {
-    text-decoration: line-through;
+    font-size: 110%;
 }
 
 
@@ -26,4 +26,8 @@ button {
         background-color: rgba(255, 215, 0, 1);
         border: 5px outset rgba(218, 165, 32, 1);
     }
+}
+
+.task {
+    margin-bottom: 5px;
 }
