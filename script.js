@@ -171,3 +171,4 @@ function renderTasks(day) {
   taskList.innerHTML = ""; // Clear existing tasks
   addTasksForDay(day, taskList);
 }
+
