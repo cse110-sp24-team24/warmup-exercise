@@ -1,4 +1,5 @@
 .caveat-brush-regular {
+
   font-family: "Caveat Brush", cursive;
   font-weight: 400;
   font-style: normal;
@@ -10,7 +11,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/*Adds the background picture to the website*/
 .background-color {
   width: 100%;
   min-height: 100vh;
@@ -30,6 +31,7 @@
   }
 }
 
+/* This will create a transparent border arount the Tasklist area*/
 .Task-List {
   display: flex;
   flex-direction: column;
@@ -55,7 +57,7 @@
   display: flex;
   color: white;
 }
-
+/*This will resize the image that is located nest to the Task-List title*/
 .Task-List h2 img {
   width: 100px;
   margin-left: 20px;
@@ -145,9 +147,11 @@ ul li::before {
   background-position: center;
   top: 12px;
   left: 8px;
+
 }
 
 /* how tasks look after completion */
+
 
 ul li.done::before {
   background-image: url("css-image/checkmark.png");
@@ -194,6 +198,7 @@ button:hover {
 input::placeholder {
   color: white;
   padding-left: 20px;
+
 }
 
 /* animations*/
