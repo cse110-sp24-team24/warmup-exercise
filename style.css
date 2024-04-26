@@ -1,157 +1,210 @@
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+  font-family: "Caveat Brush", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #333539;
-    color: #283593;
-    padding: 20px;
-    line-height: 1.6;
+.background-color {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(css-image/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  padding: 10px;
 }
 
-h2 {
-    color: #c171da;
-    font-family: 'Merriweather', serif;
-    margin-bottom: 20px;
-    font-size: 50px;
+/*For when you are on phone*/
+@media screen and (max-width: 300px) {
+  .background-color {
+    background-image: url(css-image/phone-background.jpg);
+  }
 }
 
-/* form styling */
-form#addTaskForm {
-    background: #edbcdc;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.Task-List {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+  height: 80%;
+  /*max-width: 540px;*/
+  background: rgba(0, 0, 0, 0.2);
+  padding: 40px 30px 70px;
+  margin: 100px auto 20px;
+  min-height: 100vh;
+  border: 2px solid black;
+  border-radius: 70px 0 70px 0;
+  position: relative;
 }
 
-form#addTaskForm label {
-    font-size: 25px;
-    color: #283593;
-    display: block;
-    margin-bottom: 10px;
+/* main title */
+.Task-List h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+  margin-inline: 20px;
+  align-items: center;
+  display: flex;
+  color: white;
 }
 
-form#addTaskForm div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+.Task-List h2 img {
+  width: 100px;
+  margin-left: 20px;
 }
 
+/* Changes the day drop down*/
 #dayInput {
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-    border-radius: 6px;
-    color: white;
-    background-color: #c171da;
-    font-size: 20px;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: rgb(30, 29, 29);
+  padding: 15px 9px;
+  font-weight: 14px;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
 }
-
+/*Chnages the Task input box*/
+#titleInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 9px;
+  font-weight: 14px;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+}
 #dayInput:hover {
-    background-color: #c60f83;
-    cursor: pointer;
-
+  background: rgb(59, 58, 58);
 }
 
-input[type="text"], select {
-    padding: 16px;
-    font-size: 20px;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    appearance: none;
+/* Enter todo */
+label {
+  font-size: 25px;
+  color: black;
 }
 
-input[type="text"]:focus, select:focus {
-    border-color: #8e24aa;
-}
-
-select {
-    background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23434343%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') no-repeat right 10px center / 12px 7px;
-    -webkit-appearance: none; 
-}
-
-button {
-    background-color: #c171da;
-    color: white;
-    border: none;
-    padding: 20px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-button:hover {
-    background-color: #c60f83;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* dropdown */
-details.dayDropdown {
-    background: #edbcdc;
-    padding: 20px 25px;
-    border-radius: 8px;
-    margin-top: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
-}
-
-details.dayDropdown:hover {
-    background-color: #c60f83;
-}
-
-/* day named lists*/
+/* days with tasks */
 summary {
-    font-size: 22px;
-    font-weight: bold;
-    color: #283593;
-    cursor: pointer;
-    position: relative;
+  margin-bottom: 5px;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: rgb(30, 29, 29);
+  padding: 25px;
+  font-weight: 14px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
 }
 
-summary:hover{
-    color: white;
+/* when you hover on each day */
+summary:hover {
+  background: rgb(59, 58, 58);
 }
 
-summary::after {
-    content: '';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    width: 12px;
-    height: 7px;
-    background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23ffffff%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') no-repeat center;
-    transform: translateY(-50%);
+/*changes the list of task below the dates*/
+ul li {
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  list-style: none;
+  font-size: 25px;
+  padding: 10px 10px 10px 45px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  color: rgb(204, 202, 202);
+
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
-ul.dayTasks {
-    list-style-type: none;
-    margin-top: 10px;
+/* how tasks look before completion */
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url("css-image/circle.png");
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
 }
 
-ul.dayTasks li {
-    padding: 10px;
-    background: #f1f8e9;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+/* how tasks look after completion */
+
+ul li.done::before {
+  background-image: url("css-image/checkmark.png");
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
 }
 
-ul.dayTasks li:hover {
-    background: #dcedc8;
+.items li {
+  cursor: pointer;
 }
 
-.task.checked {
-    text-decoration: line-through;
-    color: #9e9e9e;
+li.done {
+  text-decoration: line-through;
+  color: rgb(98, 96, 96);
+}
+
+/* both buttons */
+button {
+  flex: 1;
+  background: rgb(30, 29, 29);
+  border: none;
+  outline: none;
+  padding: 15px 6px;
+  border-radius: 5px;
+  font-size: 25px;
+  /*border: 5px outset rgba(46, 19, 216, 0.5);*/
+  cursor: pointer;
+  color: white;
+}
+button:hover {
+  background-color: rgb(59, 58, 58);
+}
+
+.task {
+  margin-bottom: 5px;
+}
+
+input::placeholder {
+  color: white;
+  padding-left: 20px;
 }
 
 /* animations*/
-input[type="text"], select, button {
-    transition: all 0.2s ease-in-out;
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
