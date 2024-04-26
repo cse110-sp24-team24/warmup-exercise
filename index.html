@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    
+
+    <h2>Task List</h2>
+
     <form id="addTaskForm">
       <label>Enter todo: </label>
       <div>
@@ -25,6 +29,41 @@
         <button type="submit">Add todo</button>
       </div>
     </form>
+
+    <br />
+
+    <details id="mondayDropdown" class="dayDropdown">
+      <summary>Monday</summary>
+      <ul id="mondayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="tuesdayDropdown" class="dayDropdown">
+      <summary>Tuesday</summary>
+      <ul id="tuesdayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="wednesdayDropdown" class="dayDropdown">
+      <summary>Wednesday</summary>
+      <ul id="wednesdayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="thursdayDropdown" class="dayDropdown">
+      <summary>Thursday</summary>
+      <ul id="thursdayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="fridayDropdown" class="dayDropdown">
+      <summary>Friday</summary>
+      <ul id="fridayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="saturdayDropdown" class="dayDropdown">
+      <summary>Saturday</summary>
+      <ul id="saturdayTasks" class="dayTasks"></ul>
+    </details>
+    <details id="sundayDropdown" class="dayDropdown">
+      <summary>Sunday</summary>
+      <ul id="sundayTasks" class="dayTasks"></ul>
+    </details>
+
+    <button id="remove-done" onclick="removeDone()">
+      Remove Completed Tasks
+    </button>
     <script src="script.js"></script>
   </body>
 </html>

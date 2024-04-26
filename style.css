@@ -1,0 +1,33 @@
+.items li {
+    cursor: pointer;
+}
+
+li.todo:hover {
+    font-size: 110%;
+}
+
+
+li.done {
+    text-decoration: line-through;
+    color:gray;
+}
+
+button {
+    background-color: rgba(255, 215, 0, 0.5);
+    border: 5px outset rgba(218, 165, 32, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 215, 0, 0.75);
+        border: 5px outset rgba(218, 165, 32, 0.75);
+    }
+
+    &:active {
+        background-color: rgba(255, 215, 0, 1);
+        border: 5px outset rgba(218, 165, 32, 1);
+    }
+}
+
+.task {
+    margin-bottom: 5px;
+}
