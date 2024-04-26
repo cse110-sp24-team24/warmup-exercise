@@ -1,6 +1,6 @@
 # Task List Widget
 
-## Overview:
+## Purpose:
 Creating a Task List (or To-do list) widget which allows users to add weekly tasks, mark them completed, and remove them.
 
 ## User Stories:
