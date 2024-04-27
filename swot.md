@@ -28,7 +28,9 @@ Team Name: Computer Pawgrammers
 
 - We may be able to connect the app to a database such as MongoDB to store user information and tasks, allowing for persistant storage so users can access their todo lists anywhere, anytime.
 - We can automate our version control processes by adding a CI/CD pipeline through Github Actions. In particular, we plan on using technologies such as ESLint to lint our code.
+- We can add more ways to personalize the app so that the user can change things such as the background image and fonts.
 
 ### Threats
 
 - Competing todo list apps may have added features (for example, connecting to Google Calendar) that may make them more appealing.
+- Other todo list apps are accessible in many ways such as offline and via websites and mobile apps.  
