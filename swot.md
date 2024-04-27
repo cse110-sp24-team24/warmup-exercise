@@ -8,7 +8,7 @@ Team Name: Computer Pawgrammers
 
 [Github Repo Link](https://github.com/cse110-sp24-team24/warmup-exercise)
 
-[Youtube Link](add-link)
+[Youtube Link](https://www.youtube.com/watch?v=Lv9nXplsetc)
 
 ## SWOT Analysis
 
