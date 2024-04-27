@@ -22,11 +22,12 @@ Team Name: Computer Pawgrammers
 
 - The way we split up the tasks for the project led to some blockers between tasks, meaning not everyone could work on their task at the same time. In the future, we would like to be more mindful of how tasks are split.
 - Since the project is completely rendered client-side, the program is open to security risks and attacks.
-- Communications between sub teams can be improved as many depended on other sub team's progress. Leaders for each sub team can be added to assure there is a better flow of communication between each sub team. 
+- Communications between sub teams can be improved as many depended on other sub team's progress. Leaders for each sub team can be added to assure there is a better flow of communication between each sub team.
 
 ### Opportunities
 
 - We may be able to connect the app to a database such as MongoDB to store user information and tasks, allowing for persistant storage so users can access their todo lists anywhere, anytime.
+- We can automate our version control processes by adding a CI/CD pipeline through Github Actions. In particular, we plan on using technologies such as ESLint to lint our code.
 
 ### Threats
 
