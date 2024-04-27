@@ -66,20 +66,23 @@ function addTask(title, day, completed) {
   curr_id++;
   allTasks.push(newTask);
   updateTasks();
+  renderTasks(day.toLowerCase());
 }
 
-function completeTask(id) {
+function completeTask(id, day) {
   allTasks = allTasks.map((task) =>
     task.id == id ? { ...task, completed: true } : task
   );
   updateTasks();
+  renderTasks(day.toLowerCase());
 }
 
-function uncompleteTask(id) {
+function uncompleteTask(id, day) {
   allTasks = allTasks.map((task) =>
     task.id == id ? { ...task, completed: false } : task
   );
   updateTasks();
+  renderTasks(day.toLowerCase());
 }
 
 //Add Task Form
@@ -101,14 +104,14 @@ function submitAddTaskForm() {
 }
 
 // onclick function to blur -ishaan
-function changeClass(element) {
+function changeClass(element, day) {
   if (element.classList.contains("todo")) {
     element.classList.remove("todo");
     element.classList.add("done");
 
     //change item from uncompleted to completed
     
-    completeTask(parseInt(element.id));
+    completeTask(parseInt(element.id), day);
     updateTasks();
     // Move the completed item to the bottom of the list
     const parent = element.parentNode;
@@ -118,7 +121,7 @@ function changeClass(element) {
       element.classList.add("todo");
 
       //change item from completed to uncompleted
-      uncompleteTask(parseInt(element.id));
+      uncompleteTask(parseInt(element.id), day);
       updateTasks();
   }
 }
@@ -132,6 +135,7 @@ function removeDone() {
     updateTasks();
     done.remove();
   });
+  renderTasks(day.toLowerCase());
 }
 
 // Function to add tasks to the list for a specific day
@@ -147,7 +151,7 @@ function addTasksForDay(day, taskList) {
     li.textContent = task.title;
     li.classList.add("task", "todo");
     li.addEventListener("click", function () {
-      changeClass(li);
+      changeClass(li, day);
     });
     taskList.appendChild(li);
   });
@@ -159,7 +163,7 @@ function addTasksForDay(day, taskList) {
     li.textContent = task.title;
     li.classList.add("task", "done");
     li.addEventListener("click", function () {
-      changeClass(li);
+      changeClass(li, day);
     });
     taskList.appendChild(li);
   });
