@@ -33,6 +33,8 @@ async function loadJSON(filename) {
       allTasks = data.tasks;
       allTasks.forEach((task) => {
         task.day = task.day.toLowerCase();
+        curr_id++;
+        task.id = curr_id;
       });
       updateTasks();
     });
